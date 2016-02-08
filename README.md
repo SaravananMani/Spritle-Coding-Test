@@ -1,4 +1,3 @@
-
 # App Name:  Spritle-Coding-Test
 # Rails -v: 4.2.0
 # Ruby  -v: 2.2.2
