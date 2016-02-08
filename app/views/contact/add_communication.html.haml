@@ -1,0 +1,3 @@
+= simple_form_for @contact, url: contact_create_path do |contact_field|
+  #add_communications_fields
+    = render partial: "communication_fields", locals: { contact_field: contact_field, child_index: Time.now.to_i, communication_count: @communication_count }

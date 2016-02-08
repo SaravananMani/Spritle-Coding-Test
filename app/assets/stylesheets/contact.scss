@@ -1,0 +1,22 @@
+// Place all the styles related to the contact controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.space-4 {
+  max-height:1px;
+  min-height:1px;
+  overflow:hidden;
+  margin:12px 0;
+  margin:4px 0 3px
+}
+
+.center {
+ text-align: center;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: 0;
+  border-top: 2px solid #BB1212;
+}

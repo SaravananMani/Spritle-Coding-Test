@@ -1,0 +1,31 @@
+.clearfix
+%h2.center New Contact
+.clearfix
+.row
+  .col-xs-offset-3.col-xs-5
+    = simple_form_for @contact, url: contact_create_path, html: {class: "form-horizontal", method: :post} do |contact_field|
+      = contact_field.input :first_name
+      = contact_field.input :last_name
+      = contact_field.input :email
+      .row.well
+        .col-xs-12
+          %ul.nav.nav-pills
+            %li.active
+              %a{"data-target" => "#address", "data-toggle" => "tab", href: "#address"} Address(s)
+            %li
+              %a{"data-target" => "#communication", "data-toggle" => "tab", href: "#communication"} Communication Details
+          .tab-content
+            #address.tab-pane.active.fade.in
+              #add_address_fields
+                = render partial: "address_fields", locals: { contact_field: contact_field, child_index: Time.now.to_i, address_count: @address_count }
+              .pull-right
+                = link_to "Add another address", "#", id: "add_address", class: 'btn btn-success btn-sm'
+            #communication.tab-pane
+              #add_communications_fields
+                = render partial: "communication_fields", locals: { contact_field: contact_field, child_index: Time.now.to_i, communication_count: @communication_count }
+              .pull-right
+                = link_to "Add another phone", "#", id: :add_communication, class: 'btn btn-success btn-sm'
+      .clearfix
+      .center
+        = link_to "Cancel", root_path, class: 'btn btn-danger btn-sm'
+        = contact_field.button :submit, class: 'btn btn-success btn-sm'

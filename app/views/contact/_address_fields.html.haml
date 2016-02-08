@@ -1,0 +1,3 @@
+= contact_field.fields_for :addresses, child_index: child_index do |address_field|
+  = address_field.input :address, label: "Address #{address_count}", input_html: { class: 'address-count'}
+  = address_field.input :country, label: "Country #{address_count}", as: :string

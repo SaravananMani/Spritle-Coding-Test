@@ -1,0 +1,24 @@
+.clearfix
+%h2.center Contact Lists
+.space-4
+.clearfix
+.table-responsive.clearfix
+  .space-4
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Email Id
+        %th Primary Address
+        %th Primary Phone
+    %tbody
+      - if @contacts.empty?
+        %tr
+          %td.center{colspan: "4"}
+            No records found!
+      - @contacts.each do |contact|
+        %tr
+          %td= contact.full_name
+          %td= contact.email.present? ? contact.email : '-'
+          %td= contact.primary_address
+          %td= contact.primary_phone

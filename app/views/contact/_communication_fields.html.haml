@@ -1,0 +1,2 @@
+= contact_field.fields_for :communications, child_index: child_index do |communication_field|
+  = communication_field.input :phone, label: "Phone #{communication_count}", input_html: { class: 'communication-count'}
